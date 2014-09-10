@@ -10,7 +10,3 @@ end
 get '/test' do
   erb :test, layout: false
 end
-
-get '/refresh' do
-	{salary_input: params[:salary_input]}
-end

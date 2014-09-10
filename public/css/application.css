@@ -23,7 +23,7 @@
 }
 
 .middle {
-  background-color: gray;
+  background-color: rgb(255, 255, 255);
   height: 100%;
   position: absolute;
   z-index: -1;
