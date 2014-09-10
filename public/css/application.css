@@ -11,16 +11,22 @@
   height: 100%;
   width: 1%;
   background-color: green;
-  float: left;
   position: absolute;
+  left: 0px;
 }
 
 .scroll_end {
   height: 100%;
   width: 1%;
   background-color: red;
-  float: left;
   position: absolute;
+}
+
+.middle {
+  background-color: gray;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
 }
 
 #add_scroll_bar_button {

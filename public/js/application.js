@@ -30,6 +30,7 @@ $(document).ready(function() {
         var budgeted_salary = $(".salary_input").val()
         css_left_px_end = parseInt($("#test_scroll_end").css("left").replace("px", ""))
         css_left_px_start = parseInt($("#test_scroll_start").css("left").replace("px", ""))
+        $("#test_middle").css("width", (css_left_px_end - css_left_px_start) + "px")
         dollar_value = (css_left_px_end - css_left_px_start) / total_width * budgeted_salary
         counting_object.text("$" + dollar_value.toFixed());
       }
@@ -47,6 +48,8 @@ $(document).ready(function() {
         var budgeted_salary = $(".salary_input").val()
         css_left_px_end = parseInt($("#test_scroll_end").css("left").replace("px", ""))
         css_left_px_start = parseInt($("#test_scroll_start").css("left").replace("px", ""))
+        $("#test_middle").css("width", (css_left_px_end - css_left_px_start) + "px")
+        $("#test_middle").css("left", (css_left_px_start) + "px")
         dollar_value = (css_left_px_end - css_left_px_start) / total_width * budgeted_salary
         counting_object.text("$" + dollar_value.toFixed());
       }
