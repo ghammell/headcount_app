@@ -21,6 +21,7 @@ $(document).ready(function() {
         middle.css("background-color", "rgb(" + middle_darkness + "," + middle_darkness + "," + middle_darkness + ")")
         dollar_value = (css_left_px_end - css_left_px_start) / total_width * budgeted_salary
         counting_object.text("$" + dollar_value.toFixed());
+        increment_total($(".total_calc"))
       }
     });
   };
@@ -47,9 +48,18 @@ $(document).ready(function() {
         middle.css("background-color", "rgb(" + middle_darkness + "," + middle_darkness + "," + middle_darkness + ")")
         dollar_value = (css_left_px_end - css_left_px_start) / total_width * budgeted_salary
         counting_object.text("$" + dollar_value.toFixed());
+        increment_total($(".total_calc"))
       }
     });
   };
+
+  function increment_total(element) {
+    var total = 0
+    $(".salary_calc").each(function(index, value) {
+      total += parseInt($(value).text().replace("$", ""))
+    })
+    element.text(total)
+  }
 
   $("#add_scroll_bar_button").on("click", function(event){
     event.preventDefault()
@@ -69,4 +79,6 @@ $(document).ready(function() {
       console.log("fail")
     })
   })
+
+  increment_total()
 });

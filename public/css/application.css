@@ -59,12 +59,20 @@
 }
 
 .salary_calc {
-  width: 30%;
+  width: 15%;
   height: 30px;
   vertical-align: top;
   background-color: black;
   color: white;
   display: inline-block;
   border: 1px solid blue;
+  text-align: center;
+}
+
+.total_calc {
+  width: 15%;
+  height: 30px;
+  background-color: #E0E0E0;
+  color: blue;
   text-align: center;
 }
