@@ -37,12 +37,12 @@
 }
 
 .scroll_container {
-  width: 600px;
+  width: 1000px;
   margin: 0 auto;
 }
 
 .salary_calc {
-  width: 50px;
+  width: 30%;
   height: 30px;
   vertical-align: top;
   background-color: black;
