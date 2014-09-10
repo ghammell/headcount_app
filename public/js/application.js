@@ -1,24 +1,5 @@
 $(document).ready(function() {
 
-  $("#add_scroll_bar_button").on("click", function(event){
-    event.preventDefault()
-    $.ajax({
-      url: '/new_bar',
-      method: 'get'
-    })
-    .done( function(data) {
-      $(".scroll_container").append(data)
-      $(".scroll").each( function(index, value) {
-        $(value).draggable({
-          containment: $(value).parent()
-        })
-      })
-    })
-    .fail( function() {
-      console.log("fail")
-    })
-  })
-
   function add_scroll_effect_finish(element) {
     var counting_object = element.parent().parent().find(".salary_calc")
     var container = element.parent()
@@ -69,6 +50,26 @@ $(document).ready(function() {
       }
     });
   };
+
+  $("#add_scroll_bar_button").on("click", function(event){
+    event.preventDefault()
+    $.ajax({
+      url: '/new_bar',
+      method: 'get'
+    })
+    .done( function(data) {
+      var section = $(data)
+      section.appendTo($(".scroll_container"))
+      var scroll_start = $(section.find(".scroll_start"))
+      var scroll_end = $(section.find(".scroll_end"))
+      add_scroll_effect_start(scroll_start)
+      add_scroll_effect_finish(scroll_end)
+    })
+    .fail( function() {
+      console.log("fail")
+    })
+  })
+
   add_scroll_effect_start($( "#test_scroll_start" ))
   add_scroll_effect_finish($( "#test_scroll_end" ))
 });
