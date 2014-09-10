@@ -1,0 +1,53 @@
+.bar {
+  width: 300px;
+  height: 30px;
+  border: 1px solid blue;
+  /*margin: 2%;*/
+  display: inline-block;
+}
+
+.scroll {
+  height: 100%;
+  width: 1%;
+  background-color: blue;
+}
+
+#add_scroll_bar_button {
+  width: 200px;
+  margin: 15px auto;
+}
+
+.scroll_bar_button {
+  width: 200px;
+  margin: 15px auto;
+}
+
+.salary_input {
+  width: 50px;
+  height: 30px;
+  font-size: 12px;
+  vertical-align: top;
+  padding: 0;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.full_info {
+  margin: 2%;
+}
+
+.scroll_container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.salary_calc {
+  width: 50px;
+  height: 30px;
+  vertical-align: top;
+  background-color: black;
+  color: white;
+  display: inline-block;
+  border: 1px solid blue;
+  text-align: center;
+}

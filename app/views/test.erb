@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Draggable - Events</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #draggable { width: 16em; padding: 0 1em; }
+  #draggable ul li { margin: 1em 0; padding: 0.5em 0; } * html #draggable ul li { height: 1%; }
+  #draggable ul li span.ui-icon { float: left; }
+  #draggable ul li span.count { font-weight: bold; }
+  </style>
+  <script>
+
+  $(function() {
+    var $drag_counter = $( "#event-drag" )
+    var count = 0;
+
+    $( "#draggable" ).draggable({
+      drag: function() {
+        count++;
+        updateCounterStatus( $drag_counter, count);
+      }
+    });
+
+    function updateCounterStatus( $event_counter, new_count ) {
+      $( "span.count" ).text( new_count );
+    }
+  });
+  </script>
+</head>
+<body>
+
+<div id="draggable" class="ui-widget ui-widget-content">
+  <ul class="ui-helper-reset">
+    <li id="event-drag" class="ui-state-default ui-corner-all">
+      <span class="ui-icon ui-icon-arrow-4"></span>"drag" invoked <span class="count">0</span>x</li>
+  </ul>
+</div>
+
+
+</body>
+</html>
