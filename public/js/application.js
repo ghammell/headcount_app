@@ -9,8 +9,8 @@ $(document).ready(function() {
       containment: "parent",
       opacity: 0.5,
       drag: function(e) {
-        var salary_input = $(this).parents().find(".salary_input")
-        var scroll_start = $(this).parents().find(".scroll_start")
+        var salary_input = $(this).parent().parent().find(".salary_input")
+        var scroll_start = $(this).parent().find(".scroll_start")
         var middle = $(this).parent().find(".middle")
         var budgeted_salary = salary_input.val()
         var css_left_px_end = parseInt($(this).css("left").replace("px", ""))
@@ -34,12 +34,12 @@ $(document).ready(function() {
       containment: "parent",
       opacity: 0.5,
       drag: function(e) {
-        var salary_input = $(this).parents().find(".salary_input")
-        var scroll_end = $(this).parents().find(".scroll_end")
+        var salary_input = $(this).parent().parent().find(".salary_input")
+        var scroll_end = $(this).parent().find(".scroll_end")
         var middle = $(this).parent().find(".middle")
         var budgeted_salary = salary_input.val()
         var css_left_px_end = parseInt(scroll_end.css("left").replace("px", ""))
-        var css_left_px_start = parseInt($("#test_scroll_start").css("left").replace("px", ""))
+        var css_left_px_start = parseInt($(this).css("left").replace("px", ""))
         var middle_darkness = 255 - Math.round(((css_left_px_end - css_left_px_start) / total_width * 100))
 
         middle.css("width", (css_left_px_end - css_left_px_start) + "px")
@@ -69,7 +69,4 @@ $(document).ready(function() {
       console.log("fail")
     })
   })
-
-  add_scroll_effect_start($( "#test_scroll_start" ))
-  add_scroll_effect_finish($( "#test_scroll_end" ))
 });
