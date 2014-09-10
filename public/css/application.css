@@ -4,12 +4,23 @@
   border: 1px solid blue;
   /*margin: 2%;*/
   display: inline-block;
+  position: relative;
 }
 
-.scroll {
+.scroll_start {
   height: 100%;
   width: 1%;
-  background-color: blue;
+  background-color: green;
+  float: left;
+  position: absolute;
+}
+
+.scroll_end {
+  height: 100%;
+  width: 1%;
+  background-color: red;
+  float: left;
+  position: absolute;
 }
 
 #add_scroll_bar_button {
