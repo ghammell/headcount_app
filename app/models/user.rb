@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   validates   :username,
-              :presence => {:message => "Must input a username."},
               :uniqueness => {:message => "Sorry but that username is not available."}
 
   validates   :email,

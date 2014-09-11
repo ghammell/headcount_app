@@ -203,8 +203,6 @@ ul.months {
   box-shadow: 2px 2px 2px black;
 }
 
-
-
 .home_page_forms input {
   border: none;
   width: 25%;
@@ -212,6 +210,7 @@ ul.months {
 
 input.hp_submit {
   width: 15%;
+  margin: 2%;
 }
 
 
