@@ -1,5 +1,6 @@
 body {
   background: #226666;
+
 }
 
 header {
@@ -125,7 +126,17 @@ header {
 }
 
 ul.months {
-  margin: 0 0 0 130px;
   padding: 0;
   width: 50%;
+  display: inline-block;
+  margin:0 0 0 5px;
+}
+
+.columns {
+  width: 60px;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  font-family: Consolas, monaco, monospace;
+
 }
