@@ -190,3 +190,29 @@ ul.months {
   color: red;
   cursor: pointer;
 }
+
+.home_page_forms {
+  margin: 2% auto;
+  padding: 2%;
+  height: 5%;
+  width: 50%;
+  background-color: #8B8E8E;
+  border-radius: 10px;
+  font-family: Consolas, monaco, monospace;
+  font-size: 1.5em;
+  box-shadow: 2px 2px 2px black;
+}
+
+
+
+.home_page_forms input {
+  border: none;
+  width: 25%;
+}
+
+input.hp_submit {
+  width: 15%;
+}
+
+
+
