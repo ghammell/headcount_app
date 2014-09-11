@@ -58,7 +58,7 @@ $(document).ready(function() {
     $(".salary_calc").each(function(index, value) {
       total += parseInt($(value).text().replace("$", ""))
     })
-    element.text(total)
+    element.text("Total: $" + total)
   }
 
   $("#add_scroll_bar_button").on("click", function(event){

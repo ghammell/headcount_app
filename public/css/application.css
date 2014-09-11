@@ -1,10 +1,31 @@
+body {
+  background: #226666;
+}
+
+header {
+  background-color: #1D2020;
+  font-size: 40px;
+  padding: 1%;
+}
+
+.header_items {
+  color: #FFFFFF;
+}
+
+.header_items input {
+  float: right;
+  font-size: 30px;
+  color: #226666;
+  border: none;
+}
+
 .bar {
-  width: 300px;
+  width: 60%;
   height: 30px;
-  border: 1px solid blue;
-  /*margin: 2%;*/
+  margin: 0px;
   display: inline-block;
   position: relative;
+  border: 1px solid #00C0C0;
 }
 
 .scroll_start {
@@ -29,28 +50,46 @@
   z-index: -1;
 }
 
-#add_scroll_bar_button {
-  width: 200px;
-  margin: 15px auto;
+.info_bar_top {
+  margin: 3% 0;
+  background-color: #00C0C0;
+  box-shadow: 2px 2px 2px black;
+  font-size: 20px;
+  font-family: Consolas, monaco, monospace;
 }
 
-.scroll_bar_button {
-  width: 200px;
-  margin: 15px auto;
+.info_bar_top input {
+  background: linear-gradient(white, #00C0C0);
+  border: none;
+  padding: 1%;
+  /*float: left;*/
+}
+
+.info_bar_top input:hover {
+  background: linear-gradient(#00C0C0, #068989);
+}
+
+.info_bar_top input:active {
+  color: white;
 }
 
 .salary_input {
-  width: 50px;
   height: 30px;
+  width: 60px;
   font-size: 12px;
-  vertical-align: top;
   padding: 0;
-  border: 1px solid black;
+  border: 1px solid;
   text-align: center;
 }
 
+.wage_inputs {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .full_info {
-  margin: 2%;
+  margin: 2% 0;
+  height: 30px;
 }
 
 .scroll_container {
@@ -59,20 +98,34 @@
 }
 
 .salary_calc {
-  width: 15%;
+  width: 10%;
   height: 30px;
   vertical-align: top;
   background-color: black;
   color: white;
   display: inline-block;
-  border: 1px solid blue;
   text-align: center;
 }
 
 .total_calc {
-  width: 15%;
-  height: 30px;
-  background-color: #E0E0E0;
-  color: blue;
   text-align: center;
+  padding: 1%;
+}
+
+.months li {
+  display: table-cell;
+  padding: 10px;
+  background-color: #2A4343;
+  border-radius: 4px;
+  color: white;
+  font-size: 12px;
+  width: 3%;
+  box-shadow: 2px 2px 2px black;
+  text-align: center;
+}
+
+ul.months {
+  margin: 0 0 0 130px;
+  padding: 0;
+  width: 60%;
 }
