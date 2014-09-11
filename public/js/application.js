@@ -9,17 +9,18 @@ $(document).ready(function() {
       containment: "parent",
       opacity: 0.5,
       drag: function(e) {
-        var salary_input = $(this).parent().parent().find(".salary_input")
+        var salary_input = $(this).parent().parent().find(".salary_input").val()
+        var bonus_input = $(this).parent().parent().find(".bonus_input").val()
+        var quantity = $(this).parent().parent().find(".quantity").val()
         var scroll_start = $(this).parent().find(".scroll_start")
         var middle = $(this).parent().find(".middle")
-        var budgeted_salary = salary_input.val()
         var css_left_px_end = parseInt($(this).css("left").replace("px", ""))
         var css_left_px_start = parseInt(scroll_start.css("left").replace("px", ""))
         var middle_darkness = 255 - Math.round(((css_left_px_end - css_left_px_start) / total_width * 100))
 
         middle.css("width", (css_left_px_end - css_left_px_start) + "px")
         middle.css("background-color", "rgb(" + middle_darkness + "," + middle_darkness + "," + middle_darkness + ")")
-        dollar_value = (css_left_px_end - css_left_px_start) / total_width * budgeted_salary
+        dollar_value = (css_left_px_end - css_left_px_start) / total_width * (salary_input * (1+parseFloat(bonus_input)) * quantity)
         counting_object.text("$" + dollar_value.toFixed());
         increment_total($(".total_calc"))
       }
@@ -35,10 +36,11 @@ $(document).ready(function() {
       containment: "parent",
       opacity: 0.5,
       drag: function(e) {
-        var salary_input = $(this).parent().parent().find(".salary_input")
+        var salary_input = $(this).parent().parent().find(".salary_input").val()
+        var bonus_input = $(this).parent().parent().find(".bonus_input").val()
+        var quantity = $(this).parent().parent().find(".quantity").val()
         var scroll_end = $(this).parent().find(".scroll_end")
         var middle = $(this).parent().find(".middle")
-        var budgeted_salary = salary_input.val()
         var css_left_px_end = parseInt(scroll_end.css("left").replace("px", ""))
         var css_left_px_start = parseInt($(this).css("left").replace("px", ""))
         var middle_darkness = 255 - Math.round(((css_left_px_end - css_left_px_start) / total_width * 100))
@@ -46,7 +48,7 @@ $(document).ready(function() {
         middle.css("width", (css_left_px_end - css_left_px_start) + "px")
         middle.css("left", (css_left_px_start) + "px")
         middle.css("background-color", "rgb(" + middle_darkness + "," + middle_darkness + "," + middle_darkness + ")")
-        dollar_value = (css_left_px_end - css_left_px_start) / total_width * budgeted_salary
+        dollar_value = (css_left_px_end - css_left_px_start) / total_width * (salary_input * (1+parseFloat(bonus_input)) * quantity)
         counting_object.text("$" + dollar_value.toFixed());
         increment_total($(".total_calc"))
       }

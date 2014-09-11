@@ -20,7 +20,7 @@ header {
 }
 
 .bar {
-  width: 60%;
+  width: 50%;
   height: 30px;
   margin: 0px;
   display: inline-block;
@@ -93,7 +93,7 @@ header {
 }
 
 .scroll_container {
-  width: 1000px;
+  width: 1200px;
   margin: 0 auto;
 }
 
@@ -127,5 +127,5 @@ header {
 ul.months {
   margin: 0 0 0 130px;
   padding: 0;
-  width: 60%;
+  width: 50%;
 }
