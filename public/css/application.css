@@ -99,18 +99,24 @@ header {
 }
 
 .salary_calc {
-  width: 10%;
-  height: 30px;
-  vertical-align: top;
-  background-color: black;
   color: white;
-  display: inline-block;
-  text-align: center;
+  display: table;
+  margin: 0 auto;
+}
+
+.salary_calc_container {
+  height: 30px;
+  width: 70px;
+  vertical-align: middle;
+  background-color: #1D2020;
+  display: table-cell;
+  border: 1px solid black;
 }
 
 .total_calc {
   text-align: center;
   padding: 1%;
+  vertical-align: middle;
 }
 
 .months li {
@@ -142,7 +148,6 @@ ul.months {
 
 .benefits_and_taxes {
   display: inline-block;
-  /*margin: 0 0 0 50px;*/
   margin: 0 0 0 100px;
   text-align: center;
 }
@@ -160,4 +165,9 @@ ul.months {
   font-size: 12px;
   text-align: center;
   border: 1px solid black;
+  padding: 0px;
+}
+
+.inline {
+  display: inline-block;
 }

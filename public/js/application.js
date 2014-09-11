@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  var resource_count = 0
+
   function add_scroll_effect_finish(element) {
     var counting_object = element.parent().parent().find(".salary_calc")
     var container = element.parent()
@@ -68,6 +70,7 @@ $(document).ready(function() {
 
   $("#add_scroll_bar_button").on("click", function(event){
     event.preventDefault()
+    button = $(this)
     $.ajax({
       url: '/new_bar',
       method: 'get'
@@ -79,6 +82,8 @@ $(document).ready(function() {
       var scroll_end = $(section.find(".scroll_end"))
       add_scroll_effect_start(scroll_start)
       add_scroll_effect_finish(scroll_end)
+      resource_count++
+      button.parent().find(".total_resources").text("Resources: " + resource_count)
     })
     .fail( function() {
       console.log("fail")
