@@ -93,4 +93,9 @@ $(document).ready(function() {
   $("#mega_form").on("click", ".delete", function(event){
     $(this).parents(".full_info").remove()
   })
+
+
+
+
+
 });
