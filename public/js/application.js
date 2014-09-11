@@ -90,5 +90,7 @@ $(document).ready(function() {
     })
   })
 
-  increment_total()
+  $("#mega_form").on("click", ".delete", function(event){
+    $(this).parents(".full_info").remove()
+  })
 });

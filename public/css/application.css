@@ -171,3 +171,22 @@ ul.months {
 .inline {
   display: inline-block;
 }
+
+.delete_div {
+  display: table-cell;
+  vertical-align: middle;
+  height: 30px;
+}
+
+.delete {
+  color: #00C0C0;
+  text-decoration: none;
+  transition: all .2s;
+  display: table;
+  font-size: 12px;
+}
+
+.delete:hover {
+  color: red;
+  cursor: pointer;
+}
