@@ -214,5 +214,43 @@ input.hp_submit {
   margin: 2%;
 }
 
+#select_budget {
+  border: none;
+  float: left;
+  margin: 3% 0 0 3%;
+  text-align: center;
+  font-family: Consolas, monaco, monospace;
+  box-shadow: 2px 2px 2px black;
+}
 
+.budget_name {
+  font-size: 12px;
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+.budget_name li {
+  background-color: #2A4343;
+  float:left;
+  color: white;
+  transition: all 0.2s;
+}
+
+.budget_name div {
+  height: 30px;
+  width: 150px;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.budget_name li:hover {
+  background-color: #226666;
+}
+
+.shadow {
+   -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+}
 

@@ -104,14 +104,15 @@ $(document).ready(function() {
       total_budget_info["css_left_end" + index] = css_left_px_end
       total_budget_info["css_left_start" + index] = css_left_px_start
     })
-
     $.ajax({
       url: '/save_budget',
       method: 'post',
       data: total_budget_info
     })
     .done( function(data) {
-
+      if ($("#budget_name").val() != "") {
+        $(".budget_name").append(data)
+      }
     })
     .fail( function() {
       console.log("fail")

@@ -47,6 +47,7 @@ end
 
 get '/users/:user_id' do
   session[:user_id] = params[:user_id]
+  @user = User.find(params[:user_id])
   erb :budget
 end
 
@@ -58,8 +59,6 @@ end
 post '/save_budget' do
   @user = User.find(session[:user_id])
   @budget = @user.budgets.create(name: params["budget_name"], b_and_t_rate: params["b_and_t_rate"])
-
-  p params
 
   params.each do |key, value|
     if key.include?("resource")
@@ -75,5 +74,8 @@ post '/save_budget' do
     elsif key.include?("css_left_start")
       @resource.update_attribute(:css_left_start, value)
     end
+  end
+  if @budget.id != nil
+    erb :budget_link, layout: false, locals: {budget: @budget}
   end
 end
