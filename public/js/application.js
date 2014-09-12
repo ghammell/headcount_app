@@ -73,7 +73,8 @@ $(document).ready(function() {
     button = $(this)
     $.ajax({
       url: '/new_bar',
-      method: 'get'
+      method: 'get',
+      data: {resource_count: resource_count}
     })
     .done( function(data) {
       var section = $(data)
@@ -84,6 +85,33 @@ $(document).ready(function() {
       add_scroll_effect_finish(scroll_end)
       resource_count++
       button.parent().find(".total_resources").text("Resources: " + resource_count)
+    })
+    .fail( function() {
+      console.log("fail")
+    })
+  })
+
+  $("#save_budget_button").on("click", function(event) {
+    event.preventDefault()
+    var total_budget_info = {}
+    total_budget_info["budget_name"] = $("#budget_name").val()
+    total_budget_info["b_and_t_rate"] = $(".b_and_t_input").val()
+
+    $(".wage_inputs").each( function(index, value) {
+      total_budget_info["resource" + index] = $(value).serialize()
+      var css_left_px_end  = $(this).siblings().find(".scroll_end").css("left")
+      var css_left_px_start = $(this).siblings().find(".scroll_start").css("left")
+      total_budget_info["css_left_end" + index] = css_left_px_end
+      total_budget_info["css_left_start" + index] = css_left_px_start
+    })
+
+    $.ajax({
+      url: '/save_budget',
+      method: 'post',
+      data: total_budget_info
+    })
+    .done( function(data) {
+
     })
     .fail( function() {
       console.log("fail")

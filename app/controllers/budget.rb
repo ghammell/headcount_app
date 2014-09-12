@@ -36,8 +36,8 @@ get '/sign_up' do
   erb :sign_in
 end
 
-
 get '/new_bar' do
+  @bar_id = params[:resource_count]
   erb :_scroll_bar, layout: false
 end
 
@@ -46,10 +46,34 @@ get '/test' do
 end
 
 get '/users/:user_id' do
-
+  session[:user_id] = params[:user_id]
   erb :budget
 end
 
 get '/sign_out' do
+  session[:user_id] = nil
   redirect '/'
+end
+
+post '/save_budget' do
+  @user = User.find(session[:user_id])
+  @budget = @user.budgets.create(name: params["budget_name"], b_and_t_rate: params["b_and_t_rate"])
+
+  p params
+
+  params.each do |key, value|
+    if key.include?("resource")
+      attributes = value.split("&")
+      base_salary = attributes[0].split("=")[1]
+      bonus = attributes[1].split("=")[1]
+      quantity = attributes[2].split("=")[1]
+      @resource = @budget.resources.create(base_salary: base_salary, bonus: bonus, quantity: quantity)
+
+    elsif key.include?("css_left_end")
+      @resource.update_attribute(:css_left_end, value)
+
+    elsif key.include?("css_left_start")
+      @resource.update_attribute(:css_left_start, value)
+    end
+  end
 end
