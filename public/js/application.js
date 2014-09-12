@@ -90,6 +90,8 @@ $(document).ready(function() {
     })
   })
 
+
+
   $("#save_budget_button").on("click", function(event) {
     event.preventDefault()
     var total_budget_info = {}
@@ -118,9 +120,13 @@ $(document).ready(function() {
     })
   })
 
+
+
   $("#mega_form").on("click", ".delete", function(event){
     $(this).parents(".full_info").remove()
   })
+
+
 
   $("#select_budget").on("click", ".budget_name", function(event) {
     $(".scroll_container").find(".full_info").remove()
@@ -152,6 +158,9 @@ $(document).ready(function() {
         scroll_bar.find(".quantity").val(quantity)
         scroll_bar.find(".scroll_start").css("left", css_left_px_start_string)
         scroll_bar.find(".scroll_end").css("left", css_left_px_end_string)
+
+        add_scroll_effect_start(scroll_bar.find(".scroll_start"))
+        add_scroll_effect_finish(scroll_bar.find(".scroll_end"))
 
         css_left_px_start_int = parseInt(css_left_px_start_string.replace("px", ""))
         css_left_px_end_int = parseInt(css_left_px_end_string.replace("px", ""))
