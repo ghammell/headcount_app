@@ -13,11 +13,12 @@ header {
   color: #FFFFFF;
 }
 
-.header_items input {
+.header_items a{
   float: right;
   font-size: 30px;
-  color: #226666;
+  color: #00C0C0;
   border: none;
+  text-decoration: none;
 }
 
 .bar {

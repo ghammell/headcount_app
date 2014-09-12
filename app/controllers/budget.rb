@@ -49,3 +49,7 @@ get '/users/:user_id' do
 
   erb :budget
 end
+
+get '/sign_out' do
+  redirect '/'
+end
