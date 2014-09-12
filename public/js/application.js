@@ -97,6 +97,7 @@ $(document).ready(function() {
     var total_budget_info = {}
     total_budget_info["budget_name"] = $("#budget_name").val()
     total_budget_info["b_and_t_rate"] = $(".b_and_t_input").val()
+    total_budget_info["total"] = $(".total_calc").text().replace("Total: $", "")
 
     $(".wage_inputs").each( function(index, value) {
       total_budget_info["resource" + index] = $(value).serialize()
@@ -142,6 +143,9 @@ $(document).ready(function() {
 
       $("#budget_name").val(data_hash.budget.name)
       $(".b_and_t_input").val(data_hash.budget.b_and_t_rate)
+      console.log(data_hash.budget.total)
+      $(".total_calc").text("Total: $" + data_hash.budget.total)
+
       for (i=0; i<data_hash.resources.length; i++) {
         var scroll_bar = $(data_hash.partial)
         $(".scroll_container").append(scroll_bar)

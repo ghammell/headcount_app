@@ -6,6 +6,7 @@ class CreateResources < ActiveRecord::Migration
       t.integer :quantity
       t.string :css_left_start
       t.string :css_left_end
+      t.integer :total
       t.timestamps
       t.belongs_to :budget
     end
