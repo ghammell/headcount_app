@@ -100,11 +100,14 @@ $(document).ready(function() {
     total_budget_info["total"] = $(".total_calc").text().replace("Total: $", "")
 
     $(".wage_inputs").each( function(index, value) {
-      total_budget_info["resource" + index] = $(value).serialize()
       var css_left_px_end  = $(this).siblings().find(".scroll_end").css("left")
       var css_left_px_start = $(this).siblings().find(".scroll_start").css("left")
+      var resource_total = $(this).siblings().find(".salary_calc").text()
+      console.log(resource_total)
+      total_budget_info["resource" + index] = $(value).serialize()
       total_budget_info["css_left_end" + index] = css_left_px_end
       total_budget_info["css_left_start" + index] = css_left_px_start
+      total_budget_info["single_total" + index] = resource_total
     })
     $.ajax({
       url: '/save_budget',
@@ -137,7 +140,7 @@ $(document).ready(function() {
       data: $(this).text()
     })
     .done( function(data) {
-      data_hash = JSON.parse(data)
+      var data_hash = JSON.parse(data)
 
       $("#budget_name").val(data_hash.budget.name)
       $(".b_and_t_input").val(data_hash.budget.b_and_t_rate)
@@ -151,12 +154,14 @@ $(document).ready(function() {
         var quantity = data_hash.resources[i].quantity
         var css_left_px_start_string = data_hash.resources[i].css_left_start
         var css_left_px_end_string = data_hash.resources[i].css_left_end
+        var resource_total = data_hash.resources[i].total
 
         scroll_bar.find(".salary_input").val(base_salary)
         scroll_bar.find(".bonus_input").val(bonus)
         scroll_bar.find(".quantity").val(quantity)
         scroll_bar.find(".scroll_start").css("left", css_left_px_start_string)
         scroll_bar.find(".scroll_end").css("left", css_left_px_end_string)
+        scroll_bar.find(".salary_calc").text(resource_total)
 
         add_scroll_effect_start(scroll_bar.find(".scroll_start"))
         add_scroll_effect_finish(scroll_bar.find(".scroll_end"))

@@ -77,6 +77,9 @@ post '/save_budget' do
 
     elsif key.include?("css_left_start")
       @resource.update_attribute(:css_left_start, value)
+
+    elsif key.include?("single_total")
+      @resource.update_attribute(:total, value)
     end
   end
   if @budget.id != nil
