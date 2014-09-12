@@ -82,8 +82,8 @@ $(document).ready(function() {
       var scroll_end = $(section.find(".scroll_end"))
       add_scroll_effect_start(scroll_start)
       add_scroll_effect_finish(scroll_end)
-      resource_count++
-      button.parent().find(".total_resources").text("Resources: " + resource_count)
+      resource_count = $("body").find(".full_info").length
+      $("body").find(".total_resources").text("Resources: " + resource_count)
     })
     .fail( function() {
       console.log("fail")
@@ -127,7 +127,9 @@ $(document).ready(function() {
 
 
   $("#mega_form").on("click", ".delete", function(event){
+    var start_count =  $(this).parents().find(".full_info").length
     $(this).parents(".full_info").remove()
+    $("body").find(".total_resources").text("Resources: " + (start_count - 1))
   })
 
 
