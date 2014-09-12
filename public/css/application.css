@@ -26,7 +26,7 @@ header {
 }
 
 .bar {
-  width: 50%;
+  width: 40%;
   height: 30px;
   margin: 0px;
   display: inline-block;
@@ -82,7 +82,7 @@ header {
 .salary_input {
   height: 30px;
   width: 60px;
-  font-size: 12px;
+  font-size: 1vw;
   padding: 0;
   border: 1px solid;
   text-align: center;
@@ -113,6 +113,7 @@ header {
 .salary_calc_container {
   height: 30px;
   width: 70px;
+  font-size: 1vw;
   vertical-align: middle;
   background-color: #1D2020;
   display: table-cell;
@@ -142,7 +143,7 @@ header {
 
 ul.months {
   padding: 0;
-  width: 50%;
+  width: 40%;
   display: inline-block;
   margin:0;
 }
@@ -210,7 +211,7 @@ ul.months {
   background-color: #8B8E8E;
   border-radius: 10px;
   font-family: Consolas, monaco, monospace;
-  font-size: 1.5em;
+  font-size: 1vw;
   box-shadow: 2px 2px 2px black;
 }
 
