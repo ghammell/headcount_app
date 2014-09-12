@@ -1,5 +1,9 @@
 body {
   background: #226666;
+}
+
+body, html {
+  height: 100%;
 
 }
 
@@ -56,7 +60,7 @@ header {
   margin: 3% 0;
   background-color: #00C0C0;
   box-shadow: 2px 2px 2px black;
-  font-size: 20px;
+  font-size: 1vw;
   font-family: Consolas, monaco, monospace;
 }
 
@@ -95,8 +99,9 @@ header {
 }
 
 .scroll_container {
-  width: 1200px;
+  /*width: 1200px;*/
   margin: 0 auto;
+  text-align: center;
 }
 
 .salary_calc {
@@ -117,7 +122,10 @@ header {
 .total_calc {
   text-align: center;
   padding: 1%;
-  vertical-align: middle;
+}
+
+.columns_months {
+  /*padding-left: 15px;*/
 }
 
 .months li {
@@ -136,7 +144,7 @@ ul.months {
   padding: 0;
   width: 50%;
   display: inline-block;
-  margin:0 0 0 5px;
+  margin:0;
 }
 
 .columns {
@@ -145,28 +153,29 @@ ul.months {
   text-align: center;
   color: white;
   font-family: Consolas, monaco, monospace;
+  border: 1px solid #226666;
 }
 
-.benefits_and_taxes {
-  display: inline-block;
-  margin: 0 0 0 100px;
+.right_nav {
+  background-color: #2A4343;
   text-align: center;
+  padding: 25px;
+  margin: 30px 30px 30px 0;
+  box-shadow: 2px 2px 2px black;
 }
 
-.benefits_and_taxes span {
+.right_nav span {
   font-family: Consolas, monaco, monospace;
-  font-size: 20px;
+  font-size: 1vw;
   color: white;
 }
 
-.benefits_and_taxes input {
-  width: 60px;
-  height: 30px;
+.right_nav input {
+  height: 30%;
   margin: 5px;
   font-size: 12px;
   text-align: center;
   border: 1px solid black;
-  padding: 0px;
 }
 
 .inline {
@@ -215,12 +224,13 @@ input.hp_submit {
 }
 
 #select_budget {
-  border: none;
+  background-color: #2A4343;
+  color: white;
+  height: 100%;
   float: left;
-  margin: 3% 0 0 3%;
   text-align: center;
   font-family: Consolas, monaco, monospace;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 2px 0px 2px black;
 }
 
 .budget_name {
@@ -233,7 +243,6 @@ input.hp_submit {
 .budget_name li {
   background-color: #2A4343;
   float:left;
-  color: white;
   transition: all 0.2s;
 }
 
@@ -246,11 +255,14 @@ input.hp_submit {
 
 .budget_name li:hover {
   background-color: #226666;
+  cursor: pointer;
 }
 
-.shadow {
-   -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000;
+#other_info {
+  color: white;
+  height: 100%;
+  max-width: 20%;
+  float: right;
+  text-align: center;
+  font-family: Consolas, monaco, monospace;
 }
-

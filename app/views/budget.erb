@@ -8,7 +8,7 @@
 </header>
 
 <div id="select_budget">
-  <div style="color:white; padding:10px; border-bottom: 1px solid black;">Your Budgets</div>
+  <div style="padding:10px; border-bottom: 1px solid white;">Your <br> Budgets</div>
   <ul class="budget_name">
     <% @user.budgets.each do |budget| %>
       <li>
@@ -21,9 +21,19 @@
   </ul>
 </div>
 
+<div id="other_info">
+    <div class="benefits_and_taxes right_nav">
+      <span>Benefits & Taxes</span><br>
+      <input name="b_and_t" class="b_and_t_input" type="text" placeholder="B&T %">
+    </div>
+
+    <div class="right_nav">
+      <span>Some Other Info</span><br>
+      <input name="" class="" type="text" placeholder="something else">
+    </div>
+</div>
 
 <form id="mega_form">
-
 	<div class="scroll_container">
     <div class="info_bar_top">
       <input id="budget_name" name="budget_name" type="text" placeholder="input budget name">
@@ -31,10 +41,16 @@
       <input type=submit value="add resource" id="add_scroll_bar_button">
       <span class="total_calc">Total: $0</span>
       <span class="total_resources">Resources: 0</span>
-      <input style="float:right" type=submit value="save" id="save_budget_button">
+      <input type=submit value="save" id="save_budget_button">
     </div>
 
     <div class="columns_months">
+      <div class="inline">
+        <div style="visibility:hidden" class="delete_div">
+          <a class="delete">X</a>
+        </div>
+      </div>
+
       <div class="columns">Base</div>
       <div class="columns">Bonus</div>
       <div class="columns">#</div>
@@ -53,11 +69,13 @@
         <li>Dec</li>
       </ul>
 
-      <div class="benefits_and_taxes">
-        <span>Benefits & Taxes</span><br>
-        <input name="b_and_t" class="b_and_t_input" type="text" placeholder="B&T %">
+      <div class="inline">
+        <div style="visibility:hidden" class="salary_calc_container">
+        <span class="salary_calc">$0</span>
+        </div>
       </div>
-
     </div>
 	</div>
 </form>
+
+
