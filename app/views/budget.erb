@@ -9,11 +9,11 @@
 
 <div id="select_budget">
   <div style="padding:10px; border-bottom: 1px solid white;">Your <br> Budgets</div>
-  <ul class="budget_name">
+  <ul class="budget_name_ul">
     <% @user.budgets.each do |budget| %>
       <li>
         <div>
-          <span><%= budget.name %></span>
+          <span class="budget_name"><%= budget.name %></span>
         </div>
       </li>
       <br>
@@ -37,7 +37,6 @@
 	<div class="scroll_container">
     <div class="info_bar_top">
       <input id="budget_name" name="budget_name" type="text" placeholder="input budget name">
-
       <input type=submit value="add resource" id="add_scroll_bar_button">
       <span class="total_calc">Total: $0</span>
       <span class="total_resources">Resources: 0</span>

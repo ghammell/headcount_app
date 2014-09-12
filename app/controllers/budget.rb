@@ -79,3 +79,11 @@ post '/save_budget' do
     erb :budget_link, layout: false, locals: {budget: @budget}
   end
 end
+
+get '/get_budget' do
+  @user = User.find(session[:user_id])
+  budget_name = params.keys.first
+  @budget = @user.budgets.find_by(name: budget_name)
+  @scroll_layout = erb :_scroll_bar, layout: false
+  {budget: @budget, resources: @budget.resources, partial: @scroll_layout}.to_json
+end

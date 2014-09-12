@@ -162,12 +162,12 @@ ul.months {
   padding: 25px;
   margin: 30px 30px 30px 0;
   box-shadow: 2px 2px 2px black;
+  color: white;
 }
 
 .right_nav span {
   font-family: Consolas, monaco, monospace;
   font-size: 1vw;
-  color: white;
 }
 
 .right_nav input {
@@ -176,6 +176,7 @@ ul.months {
   font-size: 12px;
   text-align: center;
   border: 1px solid black;
+  color: black;
 }
 
 .inline {
@@ -233,27 +234,27 @@ input.hp_submit {
   box-shadow: 2px 0px 2px black;
 }
 
-.budget_name {
+.budget_name_ul {
   font-size: 12px;
   list-style: none;
   margin:0;
   padding:0;
 }
 
-.budget_name li {
+.budget_name_ul li {
   background-color: #2A4343;
   float:left;
   transition: all 0.2s;
 }
 
-.budget_name div {
+.budget_name_ul div {
   height: 30px;
   width: 150px;
   vertical-align: middle;
   display: table-cell;
 }
 
-.budget_name li:hover {
+.budget_name_ul li:hover {
   background-color: #226666;
   cursor: pointer;
 }
