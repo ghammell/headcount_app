@@ -82,7 +82,7 @@ header {
 .salary_input {
   height: 30px;
   width: 60px;
-  font-size: 1vw;
+  font-size: 0.6vw;
   padding: 0;
   border: 1px solid;
   text-align: center;
@@ -108,6 +108,7 @@ header {
   color: white;
   display: table;
   margin: 0 auto;
+  font-size: 0.7vw;
 }
 
 .salary_calc_container {

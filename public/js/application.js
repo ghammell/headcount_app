@@ -138,24 +138,19 @@ $(document).ready(function() {
     })
     .done( function(data) {
       data_hash = JSON.parse(data)
-      console.log(data_hash)
-      console.log(data_hash.resources)
 
       $("#budget_name").val(data_hash.budget.name)
       $(".b_and_t_input").val(data_hash.budget.b_and_t_rate)
-      console.log(data_hash.budget.total)
       $(".total_calc").text("Total: $" + data_hash.budget.total)
 
       for (i=0; i<data_hash.resources.length; i++) {
         var scroll_bar = $(data_hash.partial)
         $(".scroll_container").append(scroll_bar)
-        base_salary = data_hash.resources[i].base_salary
-        bonus = data_hash.resources[i].bonus
-        quantity = data_hash.resources[i].quantity
-        css_left_px_start_string = data_hash.resources[i].css_left_start
-        css_left_px_end_string = data_hash.resources[i].css_left_end
-
-        console.log(data_hash.resources[i])
+        var base_salary = data_hash.resources[i].base_salary
+        var bonus = data_hash.resources[i].bonus
+        var quantity = data_hash.resources[i].quantity
+        var css_left_px_start_string = data_hash.resources[i].css_left_start
+        var css_left_px_end_string = data_hash.resources[i].css_left_end
 
         scroll_bar.find(".salary_input").val(base_salary)
         scroll_bar.find(".bonus_input").val(bonus)
@@ -172,6 +167,9 @@ $(document).ready(function() {
         scroll_bar.find(".middle").css("width", (css_left_px_end_int - css_left_px_start_int) + "px")
         scroll_bar.find(".middle").css("left", css_left_px_start_string)
       }
+
+      var resource_count = $(".full_info").length
+      $(".total_resources").text("Resources: " + resource_count)
     })
     .fail( function() {
       console.log("fail")
