@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # PostgreSQL driver
-# gem 'pg'
+gem 'pg'
 
 # Sinatra driver
 gem 'sinatra'
@@ -25,8 +25,4 @@ end
 group :test, :development do
   gem 'factory_girl'
   gem 'faker'
-end
-
-group :production do
- gem 'pg'
 end
