@@ -58,10 +58,9 @@ end
 
 post '/save_budget' do
   @user = User.find(session[:user_id])
-  puts
-  p params["total"].to_i
-  puts
-  puts
+
+  clear_same_budget(@user, params['budget_name'])
+
   @budget = @user.budgets.create(name: params["budget_name"], b_and_t_rate: params["b_and_t_rate"], total: params["total"].to_i)
 
   params.each do |key, value|
