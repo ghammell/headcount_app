@@ -1,18 +1,80 @@
-<div class="scroll_bar_button">
-  <input type=submit value="add scroll bar" id="add_scroll_bar_button">
+<header>
+  <div class="header_items">
+    <span>Blowfish</span>
+    <span style="font-size:20px; color: ##226666">resource planning</span>
+      <a href="/sign_out">sign-out</a>
+  <div>
+
+</header>
+
+<div id="select_budget">
+  <div style="padding:10px; border-bottom: 1px solid white;">Your <br> Budgets</div>
+  <ul class="budget_name_ul">
+    <% @user.budgets.each do |budget| %>
+      <li>
+        <div>
+          <span class="budget_name"><%= budget.name %></span>
+        </div>
+      </li>
+      <br>
+    <% end %>
+  </ul>
 </div>
 
-<div class="scroll_container">
-
-  <div class="full_info" id="test_full_info">
-    <input type="text" placeholder="0" class="salary_input">
-
-    <div class="bar">
-      <div class="scroll" id="test_scroll">
-      </div>
+<div id="other_info">
+    <div class="benefits_and_taxes right_nav">
+      <span>Benefits & Taxes</span><br>
+      <input name="b_and_t" class="b_and_t_input" type="text" placeholder="B&T %">
     </div>
 
-    <span class="salary_calc" id="test_calc">0</span>
-  </div>
-
+    <div class="right_nav">
+      <span>Some Other Info</span><br>
+      <input name="" class="" type="text" placeholder="something else">
+    </div>
 </div>
+
+<form id="mega_form">
+	<div class="scroll_container">
+    <div class="info_bar_top">
+      <input id="budget_name" name="budget_name" type="text" placeholder="input budget name">
+      <input type=submit value="add resource" id="add_scroll_bar_button">
+      <span class="total_calc">Total: $0</span>
+      <span class="total_resources">Resources: 0</span>
+      <input type=submit value="save" id="save_budget_button">
+    </div>
+
+    <div class="columns_months">
+      <div class="inline">
+        <div style="visibility:hidden" class="delete_div">
+          <a class="delete">X</a>
+        </div>
+      </div>
+
+      <div class="columns">Base</div>
+      <div class="columns">Bonus</div>
+      <div class="columns">#</div>
+      <ul class="months">
+        <li>Jan</li>
+        <li>Feb</li>
+        <li>Mar</li>
+        <li>Apr</li>
+        <li>May</li>
+        <li>Jun</li>
+        <li>Jul</li>
+        <li>Aug</li>
+        <li>Sep</li>
+        <li>Oct</li>
+        <li>Nov</li>
+        <li>Dec</li>
+      </ul>
+
+      <div class="inline">
+        <div style="visibility:hidden" class="salary_calc_container">
+        <span class="salary_calc">$0</span>
+        </div>
+      </div>
+    </div>
+	</div>
+</form>
+
+

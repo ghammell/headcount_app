@@ -1,10 +1,26 @@
 <div class="full_info">
-  <input type="text" placeholder="0" class="salary_input">
 
-  <div class="bar">
-    <div class="scroll">
+  <div class="inline">
+    <div class="delete_div">
+      <a class="delete">X</a>
     </div>
   </div>
 
-  <div class="salary_calc">0</div>
+  <form class="wage_inputs">
+    <input name="salary_input" type="text" placeholder="Base $" class="salary_input">
+    <input name="bonus_input" type="text" placeholder="Bonus %" class="bonus_input salary_input">
+    <input name="quantity" type="text" placeholder="#" class="quantity salary_input">
+  </form>
+
+  <div class="bar">
+    <div class="scroll_start"></div>
+    <div class="middle"></div>
+    <div class="scroll_end"></div>
+  </div>
+
+  <div class="inline">
+    <div class="salary_calc_container">
+      <span class="salary_calc">$0</span>
+    </div>
+  </div>
 </div>
